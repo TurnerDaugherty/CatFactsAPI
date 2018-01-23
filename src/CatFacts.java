@@ -39,7 +39,7 @@ public class CatFacts {
    catInput = Integer.parseInt(input.readLine());  	    			 	 //Parses the input into the variable "catInput"
    JSONObject json = readJsonFromUrl("https://catfact.ninja/facts?limit=" + (catInput));  //The number you input changes the link to where it shows how many cat facts will be produced.
    List<String> list = new ArrayList<String>();
-   JSONArray array = json.getJSONArray("data");                //Looks at the arrays from the "data" field on the JSON Document (full of cat facts and fact lengths)
+   JSONArray array = json.getJSONArray("data");               //Looks at the arrays from the "data" field on the JSON Document (full of cat facts and fact lengths)
    for(int i = 0 ; i < array.length() ; i++){                  //Loops while getting the strings for number of specified cat facts
 	   list.add(array.getJSONObject(i).getString("fact"));     //Pulls the specific facts from the "fact" field on the JSON Document 
    }
